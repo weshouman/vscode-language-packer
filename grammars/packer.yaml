@@ -89,7 +89,7 @@ patterns:
         name: punctuation.declaration.block.end.packer
     patterns:
       - include: '#comments'
-      - match: \b(type|default|description)(?:\s+)?(=)(?:\s+)?
+      - match: \b(type|default|description|sensitive)(?:\s+)?(=)(?:\s+)?
         captures:
           1:
             name: meta.keyword.$1.packer
@@ -366,7 +366,7 @@ repository:
     beginCaptures:
       0:
         name: punctuation.definition.string.template.begin.packer
-    end: '"'
+    end: '(?<!\\)(?:\\\\)*"'
     endCaptures:
       0:
         name: punctuation.definition.string.template.end.packer
